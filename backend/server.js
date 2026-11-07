@@ -119,27 +119,39 @@ app.use(
 /* ==========================================================
    Start Server
 ========================================================== */
-
-app.listen(
-    PORT,
-    "0.0.0.0",
-    () => {
-
-        console.log(
-            "==================================="
-        );
-
-        console.log(
-            "🚀 Fake News Detection AI Started"
-        );
-
-        console.log(
-            `🌐 Server running on port ${PORT}`
-        );
-
-        console.log(
-            "==================================="
-        );
-
+app.listen(PORT, "0.0.0.0", () => {
+    console.log("===================================");
+    console.log("🚀 Fake News Detection AI Started");
+    console.log(`🌐 Server running at http://localhost:${PORT}`);
+    console.log(`❤️ Health: http://localhost:${PORT}`);
+    console.log("===================================");
+}).on("error", (error) => {
+    if (error.code === "EADDRINUSE") {
+        console.error(`❌ Port ${PORT} is already in use.`);
+    } else {
+        console.error("❌ Server Error:", error);
     }
-);
+});
+// app.listen(
+//     PORT,
+//     "0.0.0.0",
+//     () => {
+
+//         console.log(
+//             "==================================="
+//         );
+
+//         console.log(
+//             "🚀 Fake News Detection AI Started"
+//         );
+
+//         console.log(
+//             `🌐 Server running on port ${PORT}`
+//         );
+
+//         console.log(
+//             "==================================="
+//         );
+
+//     }
+// );
