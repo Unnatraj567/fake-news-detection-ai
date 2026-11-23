@@ -51,7 +51,7 @@ const aiExplanation = document.getElementById("aiExplanation");
    Backend API URL
 ========================================================== */
 
-const API_URL = "http://localhost:3000";
+const API_URL = "fake-news-detection-omchyr1qr-igrish.vercel.app";
 /* ==========================================================
    Character Counter
 ========================================================== */
